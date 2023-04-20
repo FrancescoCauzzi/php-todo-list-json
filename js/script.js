@@ -60,11 +60,11 @@ createApp({
           console.error("Error updating todo:", error);
         });
     },
-    async toggleDone(index) {
+    toggleDone(index) {
       // Update the done status of the todo item in the local todos array
       this.todos[index].done = !this.todos[index].done;
-      console.log(this.todos[index]);
-      console.log(this.todos);
+      // console.log(this.todos[index]);
+      // console.log(this.todos);
       this.updateJSON();
     },
     deleteTodo(index) {
