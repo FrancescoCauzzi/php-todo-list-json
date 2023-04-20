@@ -25,9 +25,9 @@
       </header>
       <main>
         <ul class="__to-do-container mb-3">
-          <li v-for='(item,index) in todos' class="">
+          <li v-for='(item,index) in todos' :key="index" class="">
             <span class="me-2">{{ index+1 }}.</span>
-            <span>{{ item }}</span>
+            <span :class="item.done ? '__done' : ''">{{ item.text }}</span>
           </li>
         </ul>
         <div class="__my-form mb-4">

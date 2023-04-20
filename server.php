@@ -8,8 +8,17 @@ if (isset($_POST['newTodo'])) {
     // we convert the file into a php array
     $todos = json_decode($todosJSON);
 
-    // push
-    $todos[] = $_POST['newTodo'];
+    // Create a new todo object with 'text' and 'done' properties
+    $newTodo = array(
+        'text' => $_POST['newTodo'],
+        'done' => false
+    );
+
+    // push old
+    //$todos[] = $_POST['newTodo'];
+
+    // Add the new todo object to the end of the $todos array
+    $todos[] = $newTodo;
 
     // convert the file into json format
     $newTodoJSON = json_encode($todos);
@@ -18,8 +27,10 @@ if (isset($_POST['newTodo'])) {
     file_put_contents('todos.json', $newTodoJSON);
 } else {
 
+
     // This reads the entire contents of the todos.json file into a variable called $entireFileString
     $entireFileString = file_get_contents('todos.json');
+
 
     // This decodes the JSON data in $entireFileSting into a PHP object or array called $todos
     $todos = json_decode($entireFileString);

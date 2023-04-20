@@ -1,1 +1,13 @@
-["Write a letter to someone.","Learn a new recipe and cook it .","Take a walk in a park .","Call a friend.","Try a new hobby .","Clean out your closet.","Go to a museum.","Play a board game or card game.","Explore a new neighborhood .","Watch a movie or documentary.","Go to the grocery store"]
+[
+  { "text": "Walk the dog", "done": false },
+  { "text": "Clean the kitchen", "done": true },
+  { "text": "Read a book", "done": false },
+  { "text": "Take a yoga class", "done": false },
+  { "text": "Call a friend", "done": false },
+  { "text": "Learn a new language", "done": true },
+  { "text": "Try a new recipe", "done": true },
+  { "text": "Organize your closet", "done": true },
+  { "text": "Take a hike", "done": false },
+  { "text": "Visit a new city", "done": false },
+  { "text": "Take the garbage out", "done": true }
+]

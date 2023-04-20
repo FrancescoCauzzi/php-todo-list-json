@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
-li {
+ul:not(.no-bullets) li {
   list-style: none;
+}
+
+.__done {
+  text-decoration: line-through;
 }
