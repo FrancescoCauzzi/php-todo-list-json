@@ -27,10 +27,10 @@
         <ul class="__to-do-container mb-3">
           <li v-for='(item,index) in todos' :key="index" class="">
             <span class="me-2">{{ index+1 }}.</span>
-            <span :class="item.done ? '__done' : ''">{{ item.text }}</span>
+            <span :class="item.done ? '__done' : ''" @click="toggleDone(index)">{{ item.text }}</span>
           </li>
         </ul>
-        <div class="__my-form mb-4">
+        <div class=" __my-form mb-4">
           <div action="" class="">
             <div class="mb-3 d-flex">
               <div class="me-3">

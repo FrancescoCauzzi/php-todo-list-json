@@ -1,13 +1,1 @@
-[
-  { "text": "Walk the dog", "done": false },
-  { "text": "Clean the kitchen", "done": true },
-  { "text": "Read a book", "done": false },
-  { "text": "Take a yoga class", "done": false },
-  { "text": "Call a friend", "done": false },
-  { "text": "Learn a new language", "done": true },
-  { "text": "Try a new recipe", "done": true },
-  { "text": "Organize your closet", "done": true },
-  { "text": "Take a hike", "done": false },
-  { "text": "Visit a new city", "done": false },
-  { "text": "Take the garbage out", "done": true }
-]
+[{"text":"Walk the dog","done":true},{"text":"Clean the kitchen","done":true},{"text":"Read a book","done":true},{"text":"Take a yoga class","done":true},{"text":"Call a friend","done":false},{"text":"Learn a new language","done":true},{"text":"Try a new recipe","done":true},{"text":"Organize your closet","done":true},{"text":"Take a hike","done":false},{"text":"Visit a new city","done":false},{"text":"Take the garbage out","done":true},{"text":"Hello","done":false}]
