@@ -44,12 +44,31 @@ createApp({
         console.error(error);
       }
     },
+    async updateJSON() {
+      // Create a FormData object
+      const formData = new FormData();
+      formData.append("action", "updateTodos");
+      formData.append("newTodos", JSON.stringify(this.todos));
+
+      // Make an AJAX request to update the JSON file on the server
+      axios
+        .post("./server.php", formData)
+        .then((response) => {
+          console.log("Todo updated:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error updating todo:", error);
+        });
+    },
+
     async toggleDone(index) {
       // Update the done status of the todo item in the local todos array
       this.todos[index].done = !this.todos[index].done;
       console.log(this.todos[index]);
       console.log(this.todos);
+      this.updateJSON();
 
+      /* 
       // Create a FormData object
       const formData = new FormData();
       formData.append("action", "updateTodos");
@@ -64,6 +83,11 @@ createApp({
         .catch((error) => {
           console.error("Error updating todo:", error);
         });
+        */
+    },
+    deleteTodo(index) {
+      this.todos.splice(index, 1);
+      this.updateJSON();
     },
   },
 
