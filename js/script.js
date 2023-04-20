@@ -4,10 +4,24 @@ createApp({
   data() {
     return {
       title: "My to-do list",
+      todos: [],
     };
   },
 
-  methods: {},
+  methods: {
+    async getTodos() {
+      try {
+        const response = await axios.get("./server.php");
+        console.log(response.data);
+        this.todos = response.data;
+        console.log(this.todos);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
 
-  mounted() {},
+  mounted() {
+    this.getTodos();
+  },
 }).mount("#app");
