@@ -12,6 +12,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- vue 3 -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- my css -->
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -22,12 +24,29 @@
         <h1>{{title.toUpperCase()}}</h1>
       </header>
       <main>
-        <div class="__to-do-container">
-          <div v-for='(item,index) in todos'>
+        <ul class="__to-do-container mb-3">
+          <li v-for='(item,index) in todos' class="">
             <span class="me-2">{{ index+1 }}.</span>
             <span>{{ item }}</span>
+          </li>
+        </ul>
+        <div class="__my-form mb-4">
+          <div action="" class="">
+            <div class="mb-3 d-flex">
+              <div class="me-3">
+                <label for="inputText" class="form-label">{{label}}</label>
+                <input v-model="newTodo" type="text" class="form-control w-100" id="inputText" placeholder="Write here a task" @keyup.enter="addTodo()">
+              </div>
+              <div class="__my-button d-flex align-items-end">
+
+                <button type="submit" class="btn btn-primary" @click="addTodo()">Add Task</button>
+              </div>
+            </div>
+
+
 
           </div>
+
         </div>
       </main>
       <footer></footer>
