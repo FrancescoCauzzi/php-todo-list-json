@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newTodo'])) {
 
     // we save it in the json file
     file_put_contents('todos.json', $newTodoJSON);
+    //
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'updateTodos') {
     // Get the updated todos JSON string from the POST data
     $updatedTodosJSON = $_POST['newTodos'];
@@ -32,9 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newTodo'])) {
     // Decode the JSON string into a PHP array
     $updatedTodos = json_decode($updatedTodosJSON, true);
 
+    // Remove the content from the of the JSON file
     file_put_contents('todos.json', '');
 
-    // Save the updated todo list to the JSON file
+    // Save the updated todo list to the empty JSON file
     file_put_contents('todos.json', json_encode($updatedTodos));
 
     // Set the response header to indicate that the content being returned is in JSON format
